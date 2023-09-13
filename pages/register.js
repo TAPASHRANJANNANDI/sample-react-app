@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import TextField from '@mui/material/TextField';
 import { FcGoogle } from "react-icons/fc";
 import { auth } from "../firebase/firebase";
 import { createUserWithEmailAndPassword, updateProfile, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
@@ -69,28 +70,31 @@ const RegisterForm = () => {
 
                <form onSubmit={(e) => e.preventDefault()}>
                   <div className="mt-10 pl-1 flex flex-col">
-                     <label>Name</label>
-                     <input
+                     <TextField 
                         type="text"
-                        className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
+                        id="1" 
+                        label="Name" 
+                        variant="outlined" 
                         required
                         onChange={(e) => setUsername(e.target.value)}
                      />
                   </div>
                   <div className="mt-10 pl-1 flex flex-col">
-                     <label>Email</label>
-                     <input
+                     <TextField 
                         type="email"
-                        className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
+                        id="2" 
+                        label="Email" 
+                        variant="outlined" 
                         required
                         onChange={(e) => setEmail(e.target.value)}
                      />
                   </div>
                   <div className="mt-10 pl-1 flex flex-col">
-                     <label>Password</label>
-                     <input
+                     <TextField 
                         type="password"
-                        className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
+                        id="3" 
+                        label="Password" 
+                        variant="outlined" 
                         required
                         onChange={(e) => setPassword(e.target.value)}
                      />

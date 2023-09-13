@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import TextField from '@mui/material/TextField';
 import { FcGoogle } from "react-icons/fc";
 import { auth } from "../firebase/firebase";
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
@@ -60,27 +61,26 @@ const LoginForm = () => {
 
                <form onSubmit={(e) => e.preventDefault()}>
                   <div className="mt-10 pl-1 flex flex-col">
-                     <label>Email</label>
-                     <input
-                        type="text"
-                        className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
+                     <TextField 
+                        type="email"
+                        id="1" 
+                        label="Email" 
+                        variant="outlined" 
                         required
                         onChange={(e) => setEmail(e.target.value)}
                      />
                   </div>
                   <div className="mt-10 pl-1 flex flex-col">
-                     <label>Password</label>
-                     <input
+                     <TextField 
                         type="password"
-                        className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
+                        id="2" 
+                        label="Password" 
+                        variant="outlined" 
                         required
                         onChange={(e) => setPassword(e.target.value)}
                      />
                   </div>
-                  <button
-                     className="bg-black text-white w-44 py-4 mt-10 rounded-full transition-transform hover:bg-black/[0.8] active:scale-90"
-                     onClick={loginHandler}
-                  >
+                  <button className="bg-black text-white w-44 py-4 mt-10 rounded-full transition-transform hover:bg-black/[0.8] active:scale-90" onClick={loginHandler}>
                      Sign in
                   </button>
                </form>
