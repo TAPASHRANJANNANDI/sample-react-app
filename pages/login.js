@@ -24,7 +24,6 @@ const LoginForm = () => {
       if (!email || !password) return;
       try {
          const user = await signInWithEmailAndPassword(auth, email, password);
-         console.log(user);
       } catch (error) {
          console.error("An error occured", error);
       }
@@ -33,7 +32,6 @@ const LoginForm = () => {
    const logInWithGoogle = async () => {
       try {
          const user = await signInWithPopup(auth, provider);
-         console.log(user);
       } catch (error) {
          console.error("An error occured", error);
       }

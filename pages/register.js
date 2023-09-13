@@ -24,7 +24,7 @@ const RegisterForm = () => {
    const signupHandler = async () => {
       if (!username || !email || !password) return;
       try {
-         const user = await createUserWithEmailAndPassword(auth, email, password);
+         const {user} = await createUserWithEmailAndPassword(auth, email, password);
          await updateProfile(auth.currentUser, {
             displayName: username,
          });
@@ -33,7 +33,6 @@ const RegisterForm = () => {
             email: user.email,
             username
          })
-         console.log(user);
       } catch (error) {
          console.error("An error occured", error);
       }
@@ -42,7 +41,6 @@ const RegisterForm = () => {
    const signUpWithGoogle = async () => {
       try {
          const user = await signInWithPopup(auth, provider);
-         console.log(user);
       } catch (error) {
          console.error("An error occured", error);
       }
