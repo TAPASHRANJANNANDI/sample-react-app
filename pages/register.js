@@ -57,7 +57,7 @@ const RegisterForm = () => {
                <p className="mt-6 ml-1">
                   Already have an account ?{" "}
                   <Link href={"/login"} className="underline hover:text-blue-400 cursor-pointer">
-                     [LOGIN HERE]
+                     login
                   </Link>
                </p>
 
